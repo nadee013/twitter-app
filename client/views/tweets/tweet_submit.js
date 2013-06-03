@@ -4,10 +4,16 @@ Template.newTweetSubmit.events({
 
 		var tweet = {
 			tweet: $(event.target).find('[name = newTweet]').val(),
+			author: "Nadee Hardcoded",
 			date: new Date()
 		}
 
-		tweet._id = Tweets.insert(tweet);
-		Meteor.Router.to('tweetPage', tweet);
+		Meteor.call('tweet', tweet, function(error, id) {
+			if (error){
+				return alert(error.reason);	
+			}
+
+			Meteor.Router.to('tweetPage', id);
+		});
 	}
 });

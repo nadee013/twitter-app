@@ -1,0 +1,1 @@
+Reply = new Meteor.Collection('reply');
