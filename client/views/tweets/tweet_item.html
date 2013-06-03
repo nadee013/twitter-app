@@ -1,0 +1,21 @@
+<template name= "tweetItem">
+	<div class= "tweet">
+		<div>
+			<div class= "tweet-content">
+				<img class= "gravator-img" src="/mal.jpg"/>
+			</div>
+			<div class= "tweet-content">
+				<p>
+					{{tweet}}
+				</p>
+			</div>
+		<div style="clear:both"></div>
+		</div>
+		<div>
+			<p>	by {{author}}
+				on {{date}}
+				<a href="#" class="">Reply</a>
+			</p>
+		</div>
+	</div>
+</template>
