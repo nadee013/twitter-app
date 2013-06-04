@@ -13,7 +13,7 @@ Template.newTweetSubmit.events({
 				return alert(error.reason);	
 			}
 
-			Meteor.Router.to('tweetPage', id);
+			Meteor.Router.to('tweetsList');
 		});
 	}
 });

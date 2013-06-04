@@ -2,6 +2,13 @@
 	<header class="navbar">
 		<div class="navbar-inner">
 			<a class="brand" href="{{tweetsListPath}}">Twitter</a>
+			<ul class="nav">
+				{{#if currentUser}}
+					<li class="dropdown">
+						{{> notifications}}
+					</li>
+				{{/if}}
+			</ul>
 			<ul class="nav pull-right">
 				<li>{{loginButtons}}</li>
 			</ul>

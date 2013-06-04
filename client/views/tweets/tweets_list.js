@@ -1,5 +1,5 @@
 Template.tweetsList.helpers({
   tweets: function() {
-    return Tweets.find();
+    return Tweets.find({}, {sort: { submitted : -1 }});
   }
 });
