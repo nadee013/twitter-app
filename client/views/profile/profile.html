@@ -1,0 +1,17 @@
+<template name= "userProfile">
+	<div class= "">
+		<div class= "profile main">
+			<img src="/mal.jpg" class= "profile-pic">
+			<div class = "profile-name">
+				<p>Nadee Anuththara</p>
+			</div>
+		</div>	
+    	{{> newTweetSubmit}}
+		<b>My Tweets</b>
+		<div class="tweets">
+			{{#each myTweets}}
+				{{> tweetItem}}
+			{{/each}}
+		</div>
+	</div>
+</template>

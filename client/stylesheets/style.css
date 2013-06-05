@@ -113,3 +113,15 @@ body {
     margin-top: -15px;
     width: 500px;
 }
+.profile-pic {
+    width: 100px;
+    height: 100px;
+}
+.profile {
+    display: block;
+    width: auto;
+    height: 100px;
+    text-align: center;
+    margin: 10px;
+    padding: 50px;
+}

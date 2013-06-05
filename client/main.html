@@ -4,9 +4,6 @@
 <body>
   <div class="container">
     {{> header}}
-    {{#if currentUser}}
-    	{{> newTweetSubmit}}
-    {{/if}}
     <div id="main" class="row-fluid">
       {{renderPage}}
     </div>

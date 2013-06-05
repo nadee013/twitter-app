@@ -8,7 +8,9 @@ Meteor.Router.add({
   	}
   },
 
-  '/submit': 'tweetSubmit'
+  '/submit': 'tweetSubmit',
+
+  '/profile': 'userProfile'
 });
 
 Meteor.Router.filters({
