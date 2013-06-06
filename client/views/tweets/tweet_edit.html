@@ -1,10 +1,12 @@
-<template name="updateTweetSubmit">
+<template name="tweetEdit">
+  	{{#with tweet}}
   	<form name= "updateTweet" class= "main">
 		  <div class="tweet">
 			    <div class="tweet-content">
-			    	<textarea name= "updateTweet"></textarea>
-			    	<input type="submit" value= "Tweets" class="btn btn-info"/>
+			    	<textarea name= "updateTweet">{{tweet.tweet}}</textarea>
+			    	<input type="submit" value= "Tweet Update" class="btn btn-info"/>
 			    </div> 
 		  </div>
   	</form>
+  	{{/with}}
 </template>

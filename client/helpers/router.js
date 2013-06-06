@@ -10,7 +10,12 @@ Meteor.Router.add({
 
   '/submit': 'tweetSubmit',
 
-  '/profile': 'userProfile'
+  '/profile': 'userProfile',
+
+  '/tweets/:_id/edit': {
+    to: 'tweetEdit', 
+    and: function(id) { Session.set('currentTweetId', id); }    
+  },
 });
 
 Meteor.Router.filters({

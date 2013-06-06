@@ -15,6 +15,9 @@
 			<p>	by {{author}}
 				on {{submittedOn}}
 				<a href="{{tweetReply}}" class="">{{replyCount}} Replys</a>
+				{{#if ownTweet}}
+					<a href="{{tweetEditPath this}}">Edit</a>
+				{{/if}}
 			</p>
 		</div>
 	</div>

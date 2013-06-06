@@ -1,9 +1,9 @@
 Tweets = new Meteor.Collection('tweets');
 
-// Tweets.allow({
-//   update: ownsDocument,
-//   remove: ownsDocument
-// });
+Tweets.allow({
+  update: ownsDocument,
+  remove: ownsDocument
+});
 
 Meteor.methods({
 	tweet: function(tweetAttributes) {
