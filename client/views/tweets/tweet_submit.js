@@ -5,7 +5,7 @@ Template.newTweetSubmit.events({
 		var tweet = {
 			tweet: $(event.target).find('[name = newTweet]').val(),
 			author: "Nadee Hardcoded",
-			date: new Date()
+			submitted: new Date()
 		}
 
 		Meteor.call('tweet', tweet, function(error, id) {

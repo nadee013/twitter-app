@@ -1,5 +1,10 @@
 Tweets = new Meteor.Collection('tweets');
 
+// Tweets.allow({
+//   update: ownsDocument,
+//   remove: ownsDocument
+// });
+
 Meteor.methods({
 	tweet: function(tweetAttributes) {
 		var user = Meteor.user();
@@ -18,7 +23,7 @@ Meteor.methods({
 		var tweet = _.extend(_.pick(tweetAttributes, 'tweet'), {
 			userId: user._id, 
 			author: user.username, 
-			submitted: new Date().getTime()
+			submittedOn: new Date()
 		});
 
 		var tweetId = Tweets.insert(tweet);
