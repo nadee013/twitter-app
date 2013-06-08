@@ -3,10 +3,12 @@
 		<div class= "profile main">
 			<img src="/mal.jpg" class= "profile-pic">
 			<div class = "profile-name">
-				<p>Nadee Anuththara</p>
+				<p>Nadee</p>
 			</div>
 		</div>	
-    	{{> newTweetSubmit}}
+		{{#if profileUser}}
+    		{{> newTweetSubmit}}
+    	{{/if}}
 		<b>My Tweets</b>
 		<div class="tweets">
 			{{#each myTweets}}

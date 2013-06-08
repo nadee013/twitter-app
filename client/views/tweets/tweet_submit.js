@@ -12,8 +12,8 @@ Template.newTweetSubmit.events({
 			if (error){
 				return alert(error.reason);	
 			}
-
-			Meteor.Router.to('tweetsList');
+			$(event.target).find('[name = newTweet]').val("");
+			// Meteor.Router.to('tweetsList');
 		});
 	}
 });

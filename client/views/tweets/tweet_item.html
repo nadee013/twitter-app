@@ -2,7 +2,9 @@
 	<div class= "tweet">
 		<div>
 			<div class= "tweet-content">
-				<img class= "gravator-img" src="/mal.jpg"/>
+				<a href="/profile/{{userId}}">
+					<img class= "gravator-img" src="/mal.jpg"/>
+				</a>
 			</div>
 			<div class= "tweet-content">
 				<p>
@@ -14,7 +16,7 @@
 		<div>
 			<p>	by {{author}}
 				on {{submittedOn}}
-				<a href="{{tweetReply}}" class="">{{replyCount}} Replys</a>
+				<a href="{{tweetReplyPath}}" class="">{{replyCount}} Replys</a>
 				{{#if ownTweet}}
 					<a href="{{tweetEditPath this}}">Edit</a>
 				{{/if}}
