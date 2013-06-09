@@ -1,5 +1,16 @@
 <template name="tweetPage">
   {{#with currentTweet}}
     {{> tweetItem}}
+
+     <ul class="comments">
+      {{#each reply}}
+        {{> tweetReply}}
+      {{/each}}
+    </ul>
+    {{#if currentUser}}
+    	{{> replySubmit}}
+    {{else}}
+    	<p>Please log in to leave a reply.</p>
+  	{{/if}}
   {{/with}}
 </template>

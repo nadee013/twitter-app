@@ -2,11 +2,23 @@ Reply = new Meteor.Collection('reply');
 
 Meteor.methods({
   reply: function(replyAttributes) {
+  	var user = Meteor.user();
+  	var tweet = Tweets.findOne(replyAttributes.tweetId);
 
-    // create the reply, save the id
-    reply._id = Reply.insert(reply);
-    // now create a notification, informing the user that there's been a reply
-    createReplyNotification(reply);
-    return reply._id;
+  	if (!user)
+      throw new Meteor.Error(401, "You need to login to reply");
+    if (!replyAttributes.body)
+      throw new Meteor.Error(422, 'Please write some content');
+    if (!replyAttributes.tweetId)
+      throw new Meteor.Error(422, 'You must reply on a tweet');
+    
+    reply = _.extend(_.pick(replyAttributes, 'tweetId', 'body'), {
+      userId: user._id,
+      author: user.username,
+      submitted: new Date().getTime()
+    });
+    
+	Tweets.update(reply.tweetId, {$inc: {replyCount: 1}});
+    return Reply.insert(reply);
   }
 });

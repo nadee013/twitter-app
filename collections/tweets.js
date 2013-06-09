@@ -23,11 +23,15 @@ Meteor.methods({
 		var tweet = _.extend(_.pick(tweetAttributes, 'tweet'), {
 			userId: user._id, 
 			author: user.username, 
-			submittedOn: new Date()
+			submittedOn: new Date(),
+			replyCount: 0
 		});
 
 		var tweetId = Tweets.insert(tweet);
 
 		return tweetId;
+	},
+	usersTweets: function(userid) {
+		return Tweets.find({ userId : userid }, {sort: { submittedOn: -1 }});
 	}
 });
