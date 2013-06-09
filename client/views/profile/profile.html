@@ -1,11 +1,13 @@
 <template name= "userProfile">
 	<div class= "">
+		{{#with userData}}
 		<div class= "profile main">
 			<img src="/mal.jpg" class= "profile-pic">
 			<div class = "profile-name">
-				<p>Nadee</p>
+				<p>{{username}}</p>
 			</div>
-		</div>	
+		</div>
+		{{/with}}	
 		{{#if profileUser}}
     		{{> newTweetSubmit}}
     	{{/if}}
